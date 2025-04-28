@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lung Cancer Survivor Predictor</h1>
+    <form method="post" action="/predict">
+        <label for="age">Age:</label>
+        <input type="number" step="1" name="age" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" required>
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select><br><br>
+    
+        <label for="cancer_stage">Cancer Stage:</label>
+        <select name="cancer_stage" required>
+            <option value="0.0">Stage 0</option>
+            <option value="1.0">Stage 1</option>
+            <option value="2.0">Stage 2</option>
+            <option value="3.0">Stage 3</option>
+        </select><br><br>
+    
+        <label for="family_history">Family History:</label>
+        <select name="family_history" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <label for="bmi">BMI:</label>
+        <input type="number" step="0.1" name="bmi" required><br><br>
+    
+        <label for="cholesterol_level">Cholesterol Level:</label>
+        <input type="number" step="1" name="cholesterol_level" required><br><br>
+    
+        <label for="hypertension">Hypertension:</label>
+        <select name="hypertension" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <label for="asthma">Asthma:</label>
+        <select name="asthma" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <label for="cirrhosis">Cirrhosis:</label>
+        <select name="cirrhosis" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <label for="other_cancer">Other Cancer:</label>
+        <select name="other_cancer" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+    
+        <label for="treatment_duration_days">Treatment Duration (days):</label>
+        <input type="number" step="1" name="treatment_duration_days" required><br><br>
+    
+        <label for="diagnosis_year">Diagnosis Year:</label>
+        <input type="number" id="diagnosis_year" name="diagnosis_year" min="1900" max="2100" step="1" required>
+        <br><br>
+        
+    
+        <label for="diagnosis_month">Diagnosis Month:</label>
+        <input type="number" step="1" min="1" max="12" name="diagnosis_month" required><br><br>
+    
+        <label for="bmi_category">BMI Category:</label>
+        <select name="bmi_category" required>
+            <option value="0.0">Underweight</option>
+            <option value="1.0">Normal</option>
+            <option value="2.0">Overweight</option>
+            <option value="3.0">Obese</option>
+        </select><br><br>
+    
+        <label for="cholesterol_cat">Cholesterol Category:</label>
+        <select name="cholesterol_cat" required>
+            <option value="1.0">Normal</option>
+            <option value="2.0">Borderline High</option>
+            <option value="3.0">High</option>
+        </select><br><br>
+    
+        <label for="comorbidity_score">Comorbidity Score:</label>
+        <input type="number" step="1" name="comorbidity_score" required><br><br>
+    
+        <label for="treatment_type_Combined">Treatment Type - Combined:</label>
+        <select name="treatment_type_Combined" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <label for="treatment_type_Radiation">Treatment Type - Radiation:</label>
+        <select name="treatment_type_Radiation" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <label for="treatment_type_Surgery">Treatment Type - Surgery:</label>
+        <select name="treatment_type_Surgery" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <label for="smoking_status_Former_Smoker">Smoking Status - Former Smoker:</label>
+        <select name="smoking_status_Former_Smoker" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <label for="smoking_status_Never_Smoked">Smoking Status - Never Smoked:</label>
+        <select name="smoking_status_Never_Smoked" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <label for="smoking_status_Passive_Smoker">Smoking Status - Passive Smoker:</label>
+        <select name="smoking_status_Passive_Smoker" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+    
+        <input type="submit" value="Submit">
+    </form>
+    {% if prediction is not none %}
+        <h3>Approx Survivor Predicted : ${{ prediction }}</h3>
+    {% endif %}
+    
+</body>
+</html>
