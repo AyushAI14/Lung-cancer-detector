@@ -37,9 +37,9 @@ python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 Run app.py 
-
+```
 ## Web APP
-# ![Model Web APP](img/app.png)
-<img src="img/app.png" alt="Model Web APP" width="600">
+![Image](https://github.com/user-attachments/assets/4d2bb4a9-5762-45be-afc1-ef02a42846aa)
+
 
 
