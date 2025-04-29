@@ -39,5 +39,7 @@ pip install -r requirements.txt
 Run app.py 
 
 ## Web APP
-![Model Web APP](img/app.png)
+# ![Model Web APP](img/app.png)
+<img src="img/app.png" alt="Model Web APP" width="600">
+
 
